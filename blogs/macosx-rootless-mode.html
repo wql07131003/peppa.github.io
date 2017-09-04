@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>MacOS X Rootless Mode</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="dirtysalt" />
+<link rel="shortcut icon" href="https://dirtysalt.github.io/css/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../css/site.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">MacOS X Rootless Mode</h1>
+<p>
+<a href="https://www.zhihu.com/question/36108835">link</a> 发现即使使用sudo也没有办法对/System和/etc等目录写入数据。
+</p>
+
+<p>
+关闭方法是：
+</p>
+<ul class="org-ul">
+<li>重启，开机按住Command + R，以Recovery分区启动</li>
+<li>在菜单栏里面选择终端</li>
+<li>在终端里面执行 `csrutil disable`</li>
+<li>重启之后就能生效</li>
+</ul>
+</div>
+<!-- DISQUS BEGIN --><div id="disqus_thread"></div><script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * *//* required: replace example with your forum shortname  */var disqus_shortname = 'dirlt';var disqus_identifier = 'blogs/macosx-rootless-mode.html';var disqus_title = 'blogs/macosx-rootless-mode.html';var disqus_url = 'http://dirtysalt.github.io/blogs/macosx-rootless-mode.html';/* * * DON'T EDIT BELOW THIS LINE * * */(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><!-- DISQUS END --></body>
+</html>
