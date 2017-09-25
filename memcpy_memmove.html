@@ -1,0 +1,117 @@
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <span style="color: rgb(102, 102, 102); font-family: 宋体, Arial; font-size: 16px; line-height: 26px;">区别：</span>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <span style="color: rgb(102, 102, 102); font-size: 16px; line-height: 26px;"><span style="font-family: SimSun;"><span style="font-size: 14px; line-height: 26px;">memcpy和memmove（）都是C语言中的库函数，在头文件string.h中，作用是拷贝一定长度的内存的内容，原型分别如下：</span></span></span><span style="background-color: rgb(240, 240, 240);"></span>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <span style="color: rgb(102, 102, 102); font-size: 16px; line-height: 26px;"><span style="font-family: SimSun;"><span style="font-size: 14px; line-height: 26px;"></span></span></span>
+</p>
+<p>
+    <strong>[cpp]</strong>&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="ViewSource" title="view plain" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_plain.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">view plain</a><span data-mod="popu_168">&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="CopyToClipboard" title="copy" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_copy.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">copy</a></span><span data-mod="popu_169"></span>
+</p>
+<p>
+    <span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="keyword" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); background-color: inherit; font-weight: bold;"></span></span>
+</p>
+<pre class="brush:cpp;toolbar:false">void *memcpy(void *dst, const void *src, size_t count);  
+void *memmove(void *dst, const void *src, size_t count);</pre>
+<p>
+    <span style="font-family: &quot;microsoft yahei&quot;; background-color: rgb(255, 255, 255); color: rgb(102, 102, 102); font-size: 14px; line-height: 26px;">他们的作用是一样的，唯一的区别是，当内存发生局部重叠的时候，memmove保证拷贝的结果是正确的，memcpy不保证拷贝的结果的正确。</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);"/>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <br/>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <span style="color: rgb(102, 102, 102); font-family: 宋体, Arial; font-size: 16px; line-height: 26px;">一、memcpy函数</span>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <span style="color: rgb(102, 102, 102); font-family: 宋体, Arial; font-size: 16px; line-height: 26px;">Memcpy原型：</span>&nbsp; &nbsp; &nbsp;
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <br/>
+</p>
+<p>
+    <strong>[cpp]</strong>&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="ViewSource" title="view plain" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_plain.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">view plain</a><span data-mod="popu_168">&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="CopyToClipboard" title="copy" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_copy.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">copy</a></span><span data-mod="popu_169"></span>
+</p>
+<pre class="brush:cpp;toolbar:false">void *memcpy(void *dest, const void *src, size_t n);</pre>
+<p>
+    <span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">描述：</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; memcpy()函数从src内存中拷贝n个字节到dest内存区域，但是源和目的的内存区域不能重叠。</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">返回值：</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; memcpy()函数返回指向dest的指针。</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">二、memmove函数</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    memmove<span style="word-wrap: break-word;">y原型：<br/></span>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <span style="word-wrap: break-word;"></span>
+</p>
+<p>
+    <strong>[cpp]</strong>&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="ViewSource" title="view plain" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_plain.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">view plain</a><span data-mod="popu_168">&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="CopyToClipboard" title="copy" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_copy.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">copy</a></span><span data-mod="popu_169"></span>
+</p>
+<pre class="brush:cpp;toolbar:false">void *memmove(void *dest, const void *src, size_t n);</pre>
+<p>
+    <span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255); word-wrap: break-word;">描述：</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">&nbsp; &nbsp; &nbsp; &nbsp;memmove()&nbsp;</span><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255); word-wrap: break-word;">函数从src内存中拷贝n个字节到dest内存区域，但是源和目的的内存可以重叠。</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">返回值：</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; memmove函数返回一个指向dest的指针。</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">从上面的描述中可以看出两者的唯一区别就是在对待重叠区域的时候，memmove可以正确的完成对应的拷贝，而memcpy不能。</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">内存覆盖的情形有以下两种，</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><img src="http://img.blog.csdn.net/20160515192418576?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="" style="border: none; max-width: 100%; max-height: 100%; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);"/><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    先看memcpy()和memmove()这两个函数的实现：
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <br/>
+</p>
+<p>
+    <strong>[cpp]</strong>&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="ViewSource" title="view plain" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_plain.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">view plain</a><span data-mod="popu_168">&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="CopyToClipboard" title="copy" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_copy.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">copy</a></span><span data-mod="popu_169"></span>
+</p>
+<p>
+    <span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="keyword" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); background-color: inherit; font-weight: bold;"></span></span>
+</p>
+<pre class="brush:cpp;toolbar:false">void* my_memcpy(void* dst, const void* src, size_t n)  
+{  
+    char *tmp = (char*)dst;  
+    char *s_src = (char*)src;  
+  
+    while(n--) {  
+        *tmp++ = *s_src++;  
+    }  
+    return dst;  
+}</pre>
+<p>
+    <span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"></span><br/>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <br/>
+</p>
+<p>
+    <span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">从实现中可以看出memcpy()是从内存左侧一个字节一个字节地将src中的内容拷贝到dest的内存中，这种实现方式导致了对于图中第二种内存重叠情形下，最后两个字节的拷贝值明显不是原先的值了，新的值是变成了src的最开始的2个字节了。</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><span style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">而对于第一种内存覆盖情况，memcpy的这种拷贝方式是可以的。</span><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/><br style="color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255); word-wrap: break-word;"/>
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    而memmove就是针对第二种内存覆盖情形，对memcpy进行了改进，改进代码如下：
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <br/>
+</p>
+<p>
+    <strong>[cpp]</strong>&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="ViewSource" title="view plain" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_plain.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">view plain</a><span data-mod="popu_168">&nbsp;<a href="http://blog.csdn.net/li_ning_/article/details/51418400#" class="CopyToClipboard" title="copy" target="_blank" style="text-decoration-line: none; background-image: url(&quot;images/default/ico_copy.gif&quot;); background-position: left top; background-size: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: inherit; border: none; padding: 1px; margin: 0px 10px 0px 0px; font-size: 9px; color: rgb(12, 137, 207); display: inline-block; width: 16px; height: 16px; text-indent: -2000px;">copy</a></span><span data-mod="popu_169"></span>
+</p>
+<pre class="brush:cpp;toolbar:false;">void* my_memmove(void* dst, const void* src, size_t n)  
+{  
+    char* s_dst;  
+    char* s_src;  
+    s_dst = (char*)dst;  
+    s_src = (char*)src;  
+    if(s_dst&gt;s_src &amp;&amp; (s_src+n&gt;s_dst)) {      //-------------------------第二种内存覆盖的情形。  
+        s_dst = s_dst+n-1;  
+        s_src = s_src+n-1;  
+        while(n--) {  
+            *s_dst-- = *s_src--;  
+        }  
+    }else {  
+        while(n--) {  
+            *s_dst++ = *s_src++;  
+        }  
+    }  
+    return dst;  
+}</pre>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;microsoft yahei&quot;; font-size: 15px; white-space: normal; background-color: rgb(255, 255, 255);">
+    <span style="font-family: SimSun; font-size: 12px;">在第二种内存覆盖的情形下面，memcpy会出错，但是memmove是能正常工作的。</span>
+</p>
+<p>
+    <br/>
+</p>
